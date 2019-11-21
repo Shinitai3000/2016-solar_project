@@ -1,7 +1,7 @@
-# coding: utf-8
+# coding: utf-
 # license: GPLv3
 
-from solar_objects import Star, Planet
+from solar_objects import Star, Planet  #планеты
 
 
 def read_space_objects_data_from_file(input_filename):
@@ -12,7 +12,9 @@ def read_space_objects_data_from_file(input_filename):
 
     **input_filename** — имя входного файла
     """
+    =ertijaerht
 
+abracadabra=5
     objects = []
     with open(input_filename) as input_file:
         for line in input_file:
