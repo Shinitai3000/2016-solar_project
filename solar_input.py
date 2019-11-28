@@ -45,7 +45,17 @@ def parse_star_parameters(line, star):
     **line** — строка с описание звезды.
     **star** — объект звезды.
     """
-
+    list_of_parameters = line.split(' ')
+    if list_of_parameters[0] == 'Star':
+        star.R = float(list_of_parameters[1])
+        star.color = list_of_parameters[2]
+        star.m = float(list_of_parameters[3])
+        star.x = float(list_of_parameters[4])
+        star.y = float(list_of_parameters[5])
+        star.Vx = float(list_of_parameters[6])
+        star.Vy = float(list_of_parameters[7])
+    else:
+        pass
     pass  # FIXME: not done yet
 
 def parse_planet_parameters(line, planet):
