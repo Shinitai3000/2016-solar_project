@@ -13,7 +13,7 @@ def read_space_objects_data_from_file(input_filename):
     **input_filename** — имя входного файла
     """
     objects = []
-    with open(input_filename) as input_file:
+    with open(input_filename, encoding='cp932', errors='ignore') as input_file:
         for line in input_file:
             if len(line.strip()) == 0 or line[0] == '#':
                 continue  # пустые строки и строки-комментарии пропускаем
@@ -32,7 +32,7 @@ def read_space_objects_data_from_file(input_filename):
     return objects
 
 
-def parse_planet_parameters(line, Planet):
+def parse_planet_parameters(line, planet):
     list_of_parameters = line.split(' ')
     if list_of_parameters[0] == 'Planet':
         planet.R = float(list_of_parameters[1])
