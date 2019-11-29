@@ -89,7 +89,7 @@ def open_file_dialog():
         elif obj.type == 'Planet':
             create_planet_image(space, obj)
         else:
-            raise AssertionError()
+            pass#raise AssertionError()
 
 
 def save_file_dialog():
@@ -127,7 +127,7 @@ def main():
     start_button.pack(side=tkinter.LEFT)
 
     time_step = tkinter.DoubleVar()
-    time_step.set(1)
+    time_step.set(1000)
     time_step_entry = tkinter.Entry(frame, textvariable=time_step)
     time_step_entry.pack(side=tkinter.LEFT)
 
