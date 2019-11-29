@@ -31,7 +31,19 @@ def read_space_objects_data_from_file(input_filename):
     return objects
 
 
-def parse_star_parameters(line, star):
+def parse_planet_parameters(line, Planet):
+    list_of_parameters = line.split(' ')
+    if list_of_parameters[0] == 'Planet':
+        planet.R = float(list_of_parameters[1])
+        planet.color = list_of_parameters[2]
+        planet.m = float(list_of_parameters[3])
+        planet.x = float(list_of_parameters[4])
+        planet.y = float(list_of_parameters[5])
+        planet.Vx = float(list_of_parameters[6])
+        planet.Vy = float(list_of_parameters[7])
+    else:
+        pass
+    pass
     """Считывает данные о звезде из строки.
     Входная строка должна иметь слеюущий формат:
     Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
@@ -45,20 +57,9 @@ def parse_star_parameters(line, star):
     **line** — строка с описание звезды.
     **star** — объект звезды.
     """
-    list_of_parameters = line.split(' ')
-    if list_of_parameters[0] == 'Star':
-        star.R = float(list_of_parameters[1])
-        star.color = list_of_parameters[2]
-        star.m = float(list_of_parameters[3])
-        star.x = float(list_of_parameters[4])
-        star.y = float(list_of_parameters[5])
-        star.Vx = float(list_of_parameters[6])
-        star.Vy = float(list_of_parameters[7])
-    else:
-        pass
-    pass  # FIXME: not done yet
 
-def parse_planet_parameters(line, planet):
+
+def parse_star_parameters(line, star):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
     Входная строка должна иметь слеюущий формат:
@@ -73,7 +74,19 @@ def parse_planet_parameters(line, planet):
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
-    pass  # FIXME: not done yet...
+    list_of_parameters = line.split(' ')
+    if list_of_parameters[0] == 'Star':
+        star.R = float(list_of_parameters[1])
+        star.color = list_of_parameters[2]
+        star.m = float(list_of_parameters[3])
+        star.x = float(list_of_parameters[4])
+        star.y = float(list_of_parameters[5])
+        star.Vx = float(list_of_parameters[6])
+        star.Vy = float(list_of_parameters[7])
+    else:
+        pass
+    pass  # FIXME: not done yet
+    # FIXME: not done yet...
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
