@@ -25,13 +25,17 @@ def read_space_objects_data_from_file(input_filename):
                 star = Star()
                 parse_star_parameters(line, star)
                 objects.append(star)
+            if object_type == "planet":  # FIXME: do the same for planet
+                planet = Planet()
+                parse_planet_parameters(line, planet)
+                objects.append(planet)
             else:
                 print("Unknown space object")
 
     return objects
 
 
-def parse_planet_parameters(line, Planet):
+def parse_planet_parameters(line, planet):
     list_of_parameters = line.split(' ')
     if list_of_parameters[0] == 'Planet':
         planet.R = float(list_of_parameters[1])
